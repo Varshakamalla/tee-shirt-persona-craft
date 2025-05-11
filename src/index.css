@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 252 84% 74%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 260 32% 54%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 260 83% 96%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,72 +33,157 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 252 84% 74%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  .theme-1 {
+    --primary-color: #9b87f5;
+    --secondary-color: #7E69AB;
+    --background-color: #f9f7ff;
+    --text-color: #1A1F2C;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
+  .theme-2 {
+    --primary-color: #2a3950;
+    --secondary-color: #0ea5e9;
+    --background-color: #f0f9ff;
+    --text-color: #1e293b;
+  }
+
+  .theme-3 {
+    --primary-color: #f97316;
+    --secondary-color: #fb923c;
+    --background-color: #fff7ed;
+    --text-color: #431407;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply font-sans text-foreground bg-background transition-colors duration-300;
   }
+}
+
+.theme-1 {
+  @apply bg-theme1-background text-theme1-text;
+}
+
+.theme-1 .customizer-container {
+  @apply bg-white shadow-md;
+}
+
+.theme-1 .action-button {
+  @apply bg-theme1-primary text-white hover:bg-theme1-secondary;
+}
+
+.theme-1 .color-option {
+  @apply border-theme1-primary;
+}
+
+.theme-1 .customization-input {
+  @apply border-theme1-secondary focus:ring-theme1-primary;
+}
+
+.theme-2 {
+  @apply bg-theme2-background text-theme2-text;
+}
+
+.theme-2 .customizer-container {
+  @apply bg-white shadow-lg;
+}
+
+.theme-2 .action-button {
+  @apply bg-theme2-primary text-white hover:bg-theme2-secondary;
+}
+
+.theme-2 .color-option {
+  @apply border-theme2-primary;
+}
+
+.theme-2 .customization-input {
+  @apply border-theme2-secondary focus:ring-theme2-primary;
+}
+
+.theme-3 {
+  @apply bg-theme3-background text-theme3-text;
+}
+
+.theme-3 .customizer-container {
+  @apply bg-white shadow-lg;
+}
+
+.theme-3 .action-button {
+  @apply bg-theme3-primary text-white hover:bg-theme3-secondary;
+}
+
+.theme-3 .color-option {
+  @apply border-theme3-primary;
+}
+
+.theme-3 .customization-input {
+  @apply border-theme3-secondary focus:ring-theme3-primary;
+}
+
+.preview-container {
+  @apply border rounded-lg p-4 flex items-center justify-center bg-white;
+  min-height: 400px;
+}
+
+.t-shirt-overlay {
+  @apply relative;
+}
+
+.image-preview {
+  @apply max-w-full max-h-full object-contain;
+}
+
+.drag-drop-area {
+  @apply border-2 border-dashed rounded-lg p-4 flex flex-col items-center justify-center text-center cursor-pointer bg-opacity-50 transition-all;
+  min-height: 120px;
+}
+
+.drag-drop-area.dragover {
+  @apply border-primary bg-accent bg-opacity-70;
+}
+
+.customization-option {
+  @apply mb-4;
+}
+
+.customization-label {
+  @apply block mb-2 font-medium;
+}
+
+.customization-input {
+  @apply block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2;
+}
+
+.color-options {
+  @apply flex flex-wrap gap-2 mt-2;
+}
+
+.color-option {
+  @apply w-6 h-6 rounded-full border-2 cursor-pointer;
+}
+
+.color-option.selected {
+  @apply ring-2 ring-offset-2;
+}
+
+.action-button {
+  @apply px-4 py-2 rounded-md font-medium transition-colors;
+}
+
+.text-preview {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center break-words max-w-[80%];
+  word-wrap: break-word;
 }
